@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Test</title>
+
+     <!--  Montserrat Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/jquery.lineProgressbar.css">
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/style.css">
+   </head >
+   <body>
+
+   	  <!-- Container Start -->
+      <div class="container-fluid">
+
+
+         <section class="user-list">
+            <div class="row top-head">
+               <div class="col-md-8">
+                  <div class="head">
+                     <h3>User List</h3>
+                  </div>
+               </div>
+               <div class="col-md-4 siderbar-btn-div">
+                  <div class="sidebar-btn">
+                     <button class="btn bttn btn-success" id="show-report" type="button">Progress Report</button>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Table Div start -->
+            <div class="table-responsive">
+               <table class="table">
+                  <thead>
+                     <tr>
+                        <th>Full Name</th>
+                        <th>Date of birth</th>
+                        <th>Languages</th>
+                        <th>Gender</th>
+                        <th>About</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Rhichard Lovelace</td>
+                        <td>December 10, 1815</td>
+                        <td>Spannish, Latin</td>
+                        <td>Male</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                     </tr>
+                     <tr>
+                        <td>Grace Hopper </td>
+                        <td>December 13, 1815</td>
+                        <td>Latin</td>
+                        <td>Female</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                     </tr>
+                     <tr>
+                        <td>Margaret Hamiltol</td>
+                        <td>August 10, 1815</td>
+                        <td>Spannish</td>
+                        <td>Female</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                     </tr>
+                     <tr>
+                        <td>Rhichard Lovelace</td>
+                        <td>June 10, 1815</td>
+                        <td>English</td>
+                        <td>Male</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+            <button class="btn bttn btn-primary" data-toggle="modal" data-target="#myModal" type="button">Add New User</button>
+
+         </section>
+
+         <!-- Sidebar Section Start -->
+         <section class="sidebar">
+            <button class="close-btn">X</button>
+            <div class="content">
+               <h3 class="">List Progress</h3>
+               <div id="progressbar"></div>
+               <div class="user">
+                  <h3>Male</h3>
+                  <p>12</p>
+               </div>
+               <div class="user">
+                  <h3>Female</h3>
+                  <p>30</p>
+               </div>
+            </div>
+         </section>
+      </div>
+
+
+
+      <!--Add User Modal -->
+      <div class="modal add-user-model fade" id="myModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New User</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="row ">
+                     <div class="col-md-4">
+                        <div class="form-group text-label">
+                           <label>Full Name</label>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <input type="text" class="form-control full_name"  placeholder="Full Name">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row ">
+                     <div class="col-md-4">
+                        <div class="form-group text-label">
+                           <label>Date Of Birth</label>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <input type="date"   id="tbDate"  class="form-control dateofbirth">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row ">
+                     <div class="col-md-4">
+                        <div class="form-group text-label">
+                           <label>Languages</label>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <div class="multiselect lang" id="languages" multiple="multiple" data-target="multi-0">
+                              <div class="title noselect">
+                                 <span class="text">Select</span>
+                                 <span class="close-icon">&times;</span>
+                                 <span class="expand-icon">&plus;</span>
+                              </div>
+                              <div class="container">
+                                 <option value="English">English</option>
+                                 <option value="Latin">Latin</option>
+                                 <option value="Hindi">Hindi</option>
+                                 <option value="Spanish">Spanish</option>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row ">
+                     <div class="col-md-4">
+                        <div class="form-group text-label">
+                           <label>Gender</label>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <label class="radio-inline"><input type="radio" name="optradio" value="Male" class="gender" checked>Male</label>
+                           <label class="radio-inline"><input type="radio" class="gender"  value="Female" name="optradio" >Female</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row ">
+                     <div class="col-md-4">
+                        <div class="form-group text-label">
+                           <label>About</label>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <textarea class="form-control about"  placeholder="Your text here...."></textarea>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-12 text-center save-user-btn">
+                        <button type="button" class="btn-success btn " id="save-user">Save User</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- JQuery Plugins And Custom JS -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.lineProgressbar.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/custom.js"></script>
+     
+   </body>
+</html>
